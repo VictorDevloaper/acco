@@ -1,5 +1,18 @@
 # ACCO Caixas - Engenharia em Fachadas
 
+<p align="center">
+  <img src="img-bg.webp" alt="Acco Caixas Banner" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white" alt="Three.js" />
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" alt="GSAP" />
+  <img src="https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=white" alt="Swiper" />
+</p>
+
 Landing Page premium e imersiva para a **Acco Caixas**, especializada em soluções em alumínio para proteção de aparelhos de ar-condicionado em fachadas prediais.
 
 ## 🌟 Destaques do Projeto
