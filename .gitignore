@@ -1,5 +1,6 @@
 node_modules/
 .DS_Store
-Thumbs.db
-*.obj
-*.mtl
+old_animations.js
+old_index.html
+old_styles.css
+restore.py

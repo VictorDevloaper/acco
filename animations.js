@@ -1,5 +1,5 @@
 /* ============================================
-   ACCO CAIXAS – BULLETPROOF GSAP ARCHITECTURE
+   ACCO CAIXAS ÔÇô BULLETPROOF GSAP ARCHITECTURE
    ============================================ */
 
 gsap.registerPlugin(ScrollTrigger);
@@ -75,8 +75,13 @@ function initAnimations() {
       centeredSlides: true,
       slidesPerView: 'auto',
       initialSlide: 1,
-      loop: false,
+      loop: true,
+      loopedSlides: 7,
       speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       watchSlidesProgress: true,
       coverflowEffect: {
         rotate: 0,

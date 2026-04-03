@@ -10,6 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 
 <body class="loading-state">
@@ -50,6 +58,9 @@
             </h1>
             <p class="hero-desc fw-400 fade-in-up">Segurança absurda. Estética premium. A única solução em alumínio
               projetada para não sobrecarregar sua estrutura.</p>
+            <div class="fade-in-up" style="margin-top: 30px;">
+
+            </div>
           </div>
         </div>
       </section>
@@ -105,10 +116,10 @@
               <div class="card-text">
                 <span class="tag-green">A Solução</span>
                 <h3>Alumínio Estrutural ACCO</h3>
-                <p>Estrutura extrememamente leve e robusta. Isenção total de trincas. Permite estanqueidade perfeita com
+                <p>Estrutura extremamente leve e robusta. Isenção total de trincas. Permite estanqueidade perfeita com
                   isolamento e manta asfáltica. A pintura eletrostática bloqueia qualquer tipo de corrosão.</p>
               </div>
-              <img src="caixa-aluminio-bg-verde-768x768.png" alt="Acco" class="card-img filter-glow">
+              <img src="caixa-aluminio-bg-verde-768x768.png" alt="Acco" class="card-img" style="filter: grayscale(1) brightness(1.2) drop-shadow(0 20px 40px rgba(255,255,255,0.1));">
             </div>
           </div>
 
@@ -166,6 +177,7 @@
           </div>
           <div class="swiper aud-swiper">
             <div class="swiper-wrapper">
+              <!-- ORIGINAL 7 SLIDES -->
               <div class="swiper-slide aud-card">
                 <div class="aud-icon">🏢</div>
                 <h3>Síndicos</h3>
@@ -190,6 +202,62 @@
                 <p>Especificação projetada puramente de acordo com as normas vigentes (NBR), oferecendo leveza que não
                   sobrecarga a fachada.</p>
               </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🏛️</div>
+                <h3>Arquitetos</h3>
+                <p>Design modular que se integra à linguagem arquitetônica da fachada. Linhas retas e acabamento que valorizam o projeto.</p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🏠</div>
+                <h3>Moradores</h3>
+                <p>Proteção premium para o ar-condicionado com visual que valoriza o patrimônio e a fachada do condomínio inteiro.</p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🔧</div>
+                <h3>Instaladores</h3>
+                <p>Sistema de montagem intuitivo com encaixes rápidos. Instalação limpa e profissional em menos de 30 minutos por unidade.</p>
+              </div>
+              
+              <!-- DUPLICATED 7 SLIDES FOR SEAMLESS INFINITE LOOP -->
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🏢</div>
+                <h3>Síndicos</h3>
+                <p>Produto com garantia estrutural de 5 anos e estética aprovada em assembleia. Chega de dores de cabeça
+                  com caixas antigas.</p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🏗️</div>
+                <h3>Construtoras</h3>
+                <p>Segurança, padronização e acabamento extremamente rápido para acelerar as vistorias de entrega da
+                  obra.</p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">📋</div>
+                <h3>Administradoras</h3>
+                <p>Fornecedor altamente confiável, com todas as documentações e laudos técnicos exigidos atualizados.
+                </p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">⚙️</div>
+                <h3>Engenheiros</h3>
+                <p>Especificação projetada puramente de acordo com as normas vigentes (NBR), oferecendo leveza que não
+                  sobrecarga a fachada.</p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🏛️</div>
+                <h3>Arquitetos</h3>
+                <p>Design modular que se integra à linguagem arquitetônica da fachada. Linhas retas e acabamento que valorizam o projeto.</p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🏠</div>
+                <h3>Moradores</h3>
+                <p>Proteção premium para o ar-condicionado com visual que valoriza o patrimônio e a fachada do condomínio inteiro.</p>
+              </div>
+              <div class="swiper-slide aud-card">
+                <div class="aud-icon">🔧</div>
+                <h3>Instaladores</h3>
+                <p>Sistema de montagem intuitivo com encaixes rápidos. Instalação limpa e profissional em menos de 30 minutos por unidade.</p>
+              </div>
             </div>
             <div class="swiper-pagination aud-pagination"></div>
           </div>
@@ -207,30 +275,8 @@
           <div class="timeline-wrapper">
             <div class="line-center"></div>
 
-            <!-- Item 1: Acqua Pura -->
+            <!-- Item 1: Codif (1950) -->
             <div class="tl-item left-side fade-in-up delay-1">
-              <div class="tl-content">
-                <img src="logo-acqua-pura-768x136.png" class="tl-logo force-white" alt="Acqua Pura">
-                <h4>Fundada em 1999</h4>
-                <p>Mais de duas décadas de excelência em metalurgia e purificação. O coração industrial da fabricação
-                  das caixas.</p>
-              </div>
-              <div class="tl-dot"></div>
-            </div>
-
-            <!-- Item 2: ACCO -->
-            <div class="tl-item right-side fade-in-up delay-2">
-              <div class="tl-dot dot-green"></div>
-              <div class="tl-content acco-box">
-                <img src="logo-branca-768x324.png" class="tl-logo force-white" alt="Acco">
-                <h4 class="text-green">A Revolução</h3>
-                  <p>Nasce a marca definida para padronizar fachadas de ar-condicionado trazendo leveza absurda do
-                    alumínio vs concreto.</p>
-              </div>
-            </div>
-
-            <!-- Item 3: Codif -->
-            <div class="tl-item left-side fade-in-up delay-3">
               <div class="tl-content">
                 <img src="lg-codif-768x194.png" class="tl-logo force-white" alt="Codif">
                 <h4>Fundada em 1950</h4>
@@ -238,6 +284,72 @@
                   produtos em tempo recorde.</p>
               </div>
               <div class="tl-dot"></div>
+            </div>
+
+            <!-- Item 2: Acqua Pura (1999) -->
+            <div class="tl-item right-side fade-in-up delay-2">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <img src="logo-acqua-pura-768x136.png" class="tl-logo force-white" alt="Acqua Pura">
+                <h4>Fundada em 1999</h4>
+                <p>Mais de duas décadas de excelência em metalurgia e purificação. O coração industrial da fabricação
+                  das caixas.</p>
+              </div>
+            </div>
+
+            <!-- Item 3: ACCO (A Revolução) -->
+            <div class="tl-item left-side fade-in-up delay-3">
+              <div class="tl-content acco-box">
+                <img src="logo-branca-768x324.png" class="tl-logo force-white" alt="Acco">
+                <h4 class="text-green">A Revolução</h4>
+                <p>Nasce a marca definida para padronizar fachadas de ar-condicionado trazendo leveza absurda do
+                  alumínio vs concreto.</p>
+              </div>
+              <div class="tl-dot dot-green"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 3D VIEWER SECTION (INTEGRATED) ============ -->
+      <section id="visualizador-3d" class="section-3d">
+        <div class="container container-3d">
+          <div class="viewer-header fade-in-up">
+            <span class="eyebrow text-green">Interatividade</span>
+            <h2 class="title-lg fw-600">Explore cada detalhe <br>em 3D de alta precisão.</h2>
+            <p class="body-lg">Gire, amplie e personalize as cores da sua Acco Caixas direto no navegador.</p>
+          </div>
+
+          <div class="viewer-wrapper fade-in-up">
+            <div class="viewer-container">
+              <canvas id="canvas-container"></canvas>
+            </div>
+
+            <!-- Integrated Controls -->
+            <div class="viewer-controls">
+              <div class="control-group">
+                <span class="control-label">Escolha a Cor</span>
+                <div class="color-options">
+                  <button class="color-circle" data-color="#ffffff" data-name="Branco" style="background: #fff;" title="Branco"></button>
+                  <button class="color-circle" data-color="#C8B590" data-name="Bege" style="background: #C8B590;" title="Bege"></button>
+                  <button class="color-circle" data-color="#808080" data-name="Cinza" style="background: #808080;" title="Cinza"></button>
+                  <button class="color-circle" data-color="#A0522D" data-name="Terracota" style="background: #A0522D;" title="Terracota"></button>
+                  <button class="color-circle" data-color="#6B4C2A" data-name="Bronze 1003" style="background: #6B4C2A;" title="Bronze 1003"></button>
+                  <button class="color-circle" data-color="#050505" data-name="Preto" style="background: #050505;" title="Preto"></button>
+                </div>
+                <span class="color-name" id="color-name-label">Branco</span>
+              </div>
+
+              <div class="control-hint">
+                <span>Botão esquerdo para girar</span>
+              </div>
+
+              <div class="control-group zoom-group">
+                <div class="zoom-controls">
+                  <button id="zoom-in" class="zoom-btn" title="Aumentar Zoom">+</button>
+                  <button id="zoom-out" class="zoom-btn" title="Diminuir Zoom">−</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -270,7 +382,7 @@
       <footer class="footer">
         <div class="container footer-content fade-in-up">
           <img src="logo-branca-768x324.png" alt="Acco" class="nav-brand filter-white">
-          <p>© 2026 ACCO Caixas. Execução industrial: Acqua Pura. Distribuição: CODIF.</p>
+          <p>┬® 2026 ACCO Caixas. Execução industrial: Acqua Pura. Distribuição: CODIF.</p>
         </div>
       </footer>
 
@@ -283,6 +395,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="animations.js"></script>
+  <script type="module" src="viewer3d.js"></script>
 </body>
 
 </html>

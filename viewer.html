@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>ACCO Caixas – Visualizador 3D</title>
+  <style>
+    body { margin: 0; padding: 0; overflow: hidden; background: #1a1a1e; font-family: 'Inter', sans-serif; transition: background 0.8s ease; }
+    #canvas-container { width: 100vw; height: 100vh; display: block; }
+    
+    .viewer-ui {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      z-index: 100;
+    }
+    .back-btn {
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      opacity: 0.9;
+      transition: 0.3s;
+    }
+    .back-btn:hover { opacity: 1; transform: translateX(-5px); }
+    body.light-mode .back-btn { color: #000; }
+    
+    .controls-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #888;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+    body.light-mode .controls-hint { color: #333; }
+    
+    /* UI CONTAINER RIGHT */
+    .controls-panel {
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .theme-switch-wrapper {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); padding: 15px 12px;
+      border-radius: 40px; backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    body.light-mode .theme-switch-wrapper {
+      background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1);
+    }
+    
+    .theme-switch { position: relative; display: inline-block; width: 24px; height: 44px; margin: 0; }
+    .theme-switch input { opacity: 0; width: 0; height: 0; }
+    .theme-slider {
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(255,255,255,0.3); transition: .4s; border-radius: 24px;
+    }
+    body.light-mode .theme-slider { background-color: rgba(0,0,0,0.2); }
+    .theme-slider:before {
+      position: absolute; content: ""; height: 18px; width: 18px; left: 3px; top: 3px;
+      background-color: #fff; transition: .4s; border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+    input:checked + .theme-slider:before { transform: translateY(20px); }
+    .theme-icon { font-size: 1rem; user-select: none; }
+    
+    .color-picker-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      background: rgba(255,255,255,0.1);
+      padding: 20px 12px;
+      border-radius: 40px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    body.light-mode .color-picker-container { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
+    
+    .color-picker-label { 
+      color: #fff; 
+      font-family: inherit; 
+      font-size: 0.75rem; 
+      font-weight: 700; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      margin-bottom: 5px;
+    }
+    body.light-mode .color-picker-label { color: #000; }
+    
+    .color-circle {
+      width: 30px; height: 30px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.4); cursor: pointer; transition: 0.2s;
+    }
+    .color-circle:hover { transform: scale(1.2); border-color: #fff; }
+    body.light-mode .color-circle { border-color: rgba(0,0,0,0.2); }
+    
+    .custom-color-wrapper {
+      position: relative; width: 30px; height: 30px; border-radius: 50%;
+      background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+      cursor: pointer; border: 2px solid rgba(255,255,255,0.4); overflow: hidden;
+    }
+  </style>
+</head>
+<body class="light-mode">
+
+  <div class="viewer-ui">
+    <a href="index.html" class="back-btn">← Voltar para a Landing Page</a>
+  </div>
+  
+  <div class="controls-hint">Arraste para girar • Role para Níveis de Zoom</div>
+  
+  <div class="controls-panel">
+
+
+    <div class="color-picker-container">
+      <span class="color-picker-label">Cor</span>
+      <button class="color-circle" data-color="#ffffff" data-name="Branco" style="background: #fff;" title="Branco"></button>
+      <button class="color-circle" data-color="#C8B590" data-name="Bege" style="background: #C8B590;" title="Bege"></button>
+      <button class="color-circle" data-color="#808080" data-name="Cinza" style="background: #808080;" title="Cinza"></button>
+      
+      <div style="width: 20px; height: 1px; background: rgba(255,255,255,0.2); margin: 5px 0;"></div>
+      
+      <button class="color-circle" data-color="#A0522D" data-name="Terracota" style="background: #A0522D;" title="Terracota"></button>
+      <button class="color-circle" data-color="#6B4C2A" data-name="Bronze 1003" style="background: #6B4C2A;" title="Bronze 1003"></button>
+      <button class="color-circle" data-color="#050505" data-name="Preto" style="background: #050505;" title="Preto"></button>
+      <span id="color-name-label" style="color: #fff; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.5px; margin-top: 5px;">Branco</span>
+    </div>
+  </div>
+
+  <canvas id="canvas-container"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="viewer3d.js"></script>
+</body>
+</html>
