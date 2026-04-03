@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: acco-caixas-landing
+    env: static
+    buildCommand: "" # Não há build proccess (HTML estático)
+    staticPublishPath: . 
+    branch: main
