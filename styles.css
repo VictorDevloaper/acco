@@ -74,7 +74,7 @@ body {
 .scrolling-right { flex: 1.2; display: flex; flex-direction: column; gap: 30vh; margin-top: 10vh; padding-bottom: 25vh; }
 .compare-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 30px; padding: 50px; display: flex; flex-direction: column; gap: 40px; }
 .tag-red { display: inline-block; padding: 6px 14px; border: 1px solid rgba(255,60,60,0.3); color: #ff5252; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 20px; }
-.tag-green { display: inline-block; padding: 6px 14px; border: 1px solid rgba(122, 127, 136, 0.4); color: var(--color-accent); border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 20px; }
+.tag-green { display: inline-block; padding: 6px 14px; border: 1px solid rgba(29, 156, 29, 0.4); color: #1d9c1d; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 20px; }
 .card-text h3 { font-size: 2rem; margin-bottom: 15px; letter-spacing: -0.5px;}
 .card-text p { font-size: 1.1rem; color: var(--text-dim); }
 .card-img { width: 100%; max-height: 350px; object-fit: contain; margin-top: auto; }
