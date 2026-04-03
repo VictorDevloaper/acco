@@ -1,7 +1,7 @@
 # ACCO Caixas - Engenharia em Fachadas
 
 <p align="center">
-  <img src="img-bg.webp" alt="Acco Caixas Banner" width="100%" />
+  <img src="pic_fixacao_acco_1-768x861.webp" alt="Caixa Acco" width="500" />
 </p>
 
 <p align="center">
